@@ -1,15 +1,14 @@
-
-def single_root_words (root_world, *other_world):
+def single_root_words(root_word, *other_words):
     same_words = []
-    root_world = root_world.lower()
-    for i in other_world:
-            i = i.lower()
-            if root_world in i or i in root_world:
-                same_words.append(i)
+    for word in other_words:
+        if word.lower() in root_word.lower():
+            same_words.append(word)
+        elif root_word.lower() in word.lower():
+            same_words.append(word)
     return same_words
+
 
 result1 = single_root_words('rich', 'richiest', 'orichalcum', 'cheers', 'richies')
 result2 = single_root_words('Disablement', 'Able', 'Mable', 'Disable', 'Bagel')
-
 print(result1)
 print(result2)
